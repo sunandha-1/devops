@@ -10,8 +10,6 @@ By using command ,
 For Backend: Navigate to the backend directory and create a Dockerfile.
 cd Techdome-backend
 Create a file named Dockerfile with the following content:
-
-
 dockerfilr for backend
 # Use the official Node.js image
 FROM node:14
@@ -29,8 +27,6 @@ CMD ["npm", "start"]
 For Frontend: Navigate to the frontend directory and create a Dockerfile.
 Cd Techdome-frontend
 Create a file named Dockerfile with the following content:
-
-
 dockerfile for frontend
 # Use the official Node.js image
 FROM node:14
@@ -45,8 +41,6 @@ COPY . .
 EXPOSE 3000
 # Start the application
 CMD ["npm", "start"]
-
-
 Create a Docker Compose File
 create a docker-compose.yml file.
 version: '3'
@@ -78,13 +72,11 @@ services:
 networks:
  techdome-network:
  driver: bridge
-
 Build and Run with Docker Compose
 In the same directory as your docker-compose.yml, run:
 docker-compose up --build
 This command builds and starts your containers. 
 Visit http://localhost:3000 to see the frontend.
-
 Create Kubernetes Deployment Files
 Create a directory for Kubernetes manifests:
 mkdir k8s
@@ -193,14 +185,11 @@ spec:
  targetPort: 5432
  selector:
  app: database
-
- 
  Deploy to Kubernetes
 Apply your deployment files:
 kubectl apply -f backend-deployment.yml
 kubectl apply -f frontend-deployment.yml
 kubectl apply -f database-deployment.yml
-
 Step 9: Access the Application
 Get the Minikube IP:
 minikube ip
